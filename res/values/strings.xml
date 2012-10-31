@@ -1,11 +1,12 @@
 <resources>
 
-    <string name="app_name">Market Listo</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="app_name">MarketListo</string>
     <string name="menu_settings">Settings</string>
-    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_main">MarketListo - Lists</string>
     <string name="edit_message">Enter a message</string>
     <string name="button_send">Send</string>
     <string name="title_activity_display_message">My Message</string>
+    <string name="app_description">Remember the milk based app</string>
+    <string name="title_activity_splash_screen">Splash Screen</string>
 
 </resources>
