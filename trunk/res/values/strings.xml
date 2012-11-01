@@ -8,5 +8,12 @@
     <string name="title_activity_display_message">My Message</string>
     <string name="app_description">Remember the milk based app</string>
     <string name="title_activity_splash_screen">Splash Screen</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_simple">Simple</string>
+    <string name="list_header">Items</string>
+    <string name="button_clear">Clear</string>
+    <string name="button_save">Save</string>
+    <string name="title_activity_list_selector">ListSelector</string>
+    <string name="title_activity_custom_row">CustomRow</string>
 
 </resources>
