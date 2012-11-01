@@ -3,6 +3,7 @@
     xmlns:android1="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="#FFFFFF"
     android:orientation="vertical" >
     
     <EditText
@@ -11,18 +12,44 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:hint="@string/edit_message"
-        android1:singleLine="true" />
+        android:singleLine="true" />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="addItem"
-        android:text="@string/button_send" />
-
-    <ListView
-        android1:id="@+id/mainlistView"
+    <LinearLayout
         android1:layout_width="match_parent"
         android1:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/btnSend"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="addItem"
+            android:text="@string/button_send" />
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/button_save" />
+
+        <Button
+            android:id="@+id/btnClear"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/button_clear" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/mainlistView"
+        style="android:listViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:choiceMode="singleChoice" >
+
     </ListView>
+
+
 
 </LinearLayout>

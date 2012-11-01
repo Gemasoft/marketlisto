@@ -12,17 +12,16 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-        
         <activity
             android:name=".SplashScreen"
-            android:label="@string/app_name" 
-            android:theme="@android:style/Theme.NoTitleBar">
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.NoTitleBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main" >
@@ -30,7 +29,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.gemasoft.marketlisto.SplashScreen" />
         </activity>
-        
         <activity
             android:name=".DisplayMessageActivity"
             android:label="@string/title_activity_display_message" >
@@ -38,7 +36,36 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.gemasoft.marketlisto.MainActivity" />
         </activity>
-        
+        <activity android:name=".SimpleListView" >
+        </activity>
+        <activity
+            android:name=".Simple"
+            android:label="@string/title_activity_simple" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ListSelector"
+            android:label="@string/title_activity_list_selector"
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".CustomRow"
+            android:label="@string/title_activity_custom_row" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
