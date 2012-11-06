@@ -1,6 +1,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="75dp"
+    android:layout_height="60dp"
     android:clickable="true"
     android:longClickable="true"
     android:orientation="horizontal"
@@ -8,20 +8,12 @@
     
      <CheckBox
          android:id="@+id/cbxChecked"
-         android:layout_width="wrap_content"
+         android:layout_width="match_parent"
          android:layout_height="wrap_content"
-         android:checked="true" >
-         
-     </CheckBox>
-        
-     <TextView android:id="@+id/txtTitle"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:gravity="center_vertical"
-        android:textSize="22dp"
-        android:textColor="#000000"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp" 
-        android:text="Test"/>
-        
+         android:button="@drawable/checkbox_selector"
+         android:checked="false"
+         android:longClickable="true"
+         android:clickable="true" 
+         android:onClick="changeSelection">      
+     </CheckBox>   
 </LinearLayout>
