@@ -1,11 +1,7 @@
 <!--?xml version="1.0" encoding="utf-8"?-->
 <todoitems>
-	<item title="Market List" description="" checked="true">
-		<task title="Beer"></task>
-		<task title="Potatoes"></task>	
-		<task title="Food"></task>			
-	</item>
-	<item title="Wash car" description="" checked="false"/>
-	<item title="Dinner with friends" description="" checked="true"/>
-	<item title="Watch Movie" description="" checked="false"/>
+	<item title="Jam" checked="true"></item>
+	<item title="Mop" checked="false"></item>
+	<item title="Curtains" checked="true"></item>
+	<item title="Soda" checked="false"></item>
 </todoitems>
