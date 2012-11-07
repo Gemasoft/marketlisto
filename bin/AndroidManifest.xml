@@ -35,17 +35,9 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.gemasoft.marketlisto.MainActivity" />
         </activity>
-        <activity android:name=".SimpleListView" >
-        </activity>
-        <activity
-            android:name=".Simple"
-            android:label="@string/title_activity_simple" >
-        </activity>
         <activity
             android:name=".CustomRow"
             android:label="@string/title_activity_custom_row" >
-        </activity>
-        <activity android:name=".CustomListViewDB" >
         </activity>
         <activity
             android:name=".AddItem"

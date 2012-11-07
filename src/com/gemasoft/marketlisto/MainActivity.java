@@ -18,11 +18,11 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
-	private ListView mainListView = null;
-	ListItemAdapter customTODOAdapter = null;
-	MySQLHelper helper = new MySQLHelper(this);
-	private int selectedItemId;
-	ArrayList<ListItem> listTODO;
+	 int selectedItemId = 0;
+	 ListView mainListView = null;
+	 ListItemAdapter customTODOAdapter = null;
+	 MySQLHelper helper = new MySQLHelper(this);
+	 ArrayList<ListItem> listTODO = null;
 	
 	/** Called when the activity is first created. */
 	@Override
@@ -34,12 +34,12 @@ public class MainActivity extends Activity {
 		btnClear.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				helper.clearSelections();
-				Toast.makeText(getApplicationContext(), "The checkboxes have been cleared!", Toast.LENGTH_SHORT).show();
-				customTODOAdapter.notifyDataSetChanged();
+				refreshView();
+				Toast.makeText(getApplicationContext(), "The checkboxes have been cleared!", Toast.LENGTH_SHORT).show();			
 			}
 		});
 		
-		Button btnAdd = (Button) findViewById(R.id.btnSend);
+        Button btnAdd = (Button) findViewById(R.id.btnSend);
 		btnAdd.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 		        Intent intent = new Intent(MainActivity.this, AddItem.class);
@@ -84,8 +84,8 @@ public class MainActivity extends Activity {
 		String menuItemName = menuItems[menuItemIndex];	
 		if(menuItemName == "Delete"){
 			helper.deleteItem(selectedItemId);
-			Toast.makeText(getApplicationContext(), menuItemName + " Item deleted!", Toast.LENGTH_SHORT).show();
-			customTODOAdapter.notifyDataSetChanged();
+			refreshView();
+			Toast.makeText(getApplicationContext(), "Item deleted!", Toast.LENGTH_SHORT).show();
 		}
     	return true;
     }
@@ -96,6 +96,11 @@ public class MainActivity extends Activity {
 		Integer _ID = (Integer) cBox.getTag();
 		int checked = cBox.isChecked() ? 1 : 0;
 		helper.checkItem(_ID, checked);
-        }
+     }
+    
+    public void refreshView(){
+    	customTODOAdapter.notifyDataSetChanged();
+		mainListView.refreshDrawableState();	
+    }
     
 }
