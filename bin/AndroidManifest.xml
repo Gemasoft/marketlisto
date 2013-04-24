@@ -42,7 +42,8 @@
         <activity
             android:name=".AddItem"
             android:label="@string/title_activity_add_item" 
-            android:windowSoftInputMode="stateVisible|adjustResize">
+            android:windowSoftInputMode="stateVisible|adjustResize"
+            android:theme="@android:style/Theme.Dialog">
         </activity>
     </application>
 

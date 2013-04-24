@@ -20,16 +20,19 @@ public final class R {
         public static final int icon=0x7f020006;
     }
     public static final class id {
-        public static final int btnAddNewItem=0x7f080003;
-        public static final int btnCancelAdd=0x7f080002;
-        public static final int btnClear=0x7f080005;
-        public static final int btnSend=0x7f080004;
-        public static final int cbxChecked=0x7f080008;
-        public static final int imageView1=0x7f080007;
-        public static final int mainlistView=0x7f080006;
-        public static final int menu_settings=0x7f080009;
-        public static final int textView1=0x7f080000;
+        public static final int btnAddNewItem=0x7f080005;
+        public static final int btnCancelAdd=0x7f080004;
+        public static final int btnClear=0x7f080007;
+        public static final int btnDeleteAll=0x7f080008;
+        public static final int btnSend=0x7f080006;
+        public static final int cbxChecked=0x7f08000b;
+        public static final int imageView1=0x7f08000a;
+        public static final int lblItemName=0x7f080000;
+        public static final int lblQuantity=0x7f080002;
+        public static final int mainlistView=0x7f080009;
+        public static final int menu_settings=0x7f08000c;
         public static final int txtNewItemTitle=0x7f080001;
+        public static final int txtQuantity=0x7f080003;
     }
     public static final class layout {
         public static final int activity_add_item=0x7f030000;
@@ -55,6 +58,8 @@ public final class R {
         public static final int button_add_new_item=0x7f05000f;
         public static final int button_cancel_new_item=0x7f050010;
         public static final int button_clear=0x7f050009;
+        public static final int button_delete_all=0x7f050013;
+        public static final int button_quantity=0x7f050014;
         public static final int button_save=0x7f05000a;
         public static final int edit_message=0x7f050003;
         public static final int list_header=0x7f050008;

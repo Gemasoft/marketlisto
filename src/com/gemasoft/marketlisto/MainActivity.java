@@ -3,6 +3,8 @@ package com.gemasoft.marketlisto;
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.ContextMenu;
@@ -17,7 +19,7 @@ import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.Toast;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity   {
 	 int selectedItemId = 0;
 	 ListView mainListView = null;
 	 ListItemAdapter customTODOAdapter = null;
@@ -46,22 +48,42 @@ public class MainActivity extends Activity {
 		        MainActivity.this.startActivity(intent);
 			}
 		});
-			
-		//int counter = helper.getItemsTotal();			
-		//Toast.makeText(getApplicationContext(), Integer.toString(counter) + " Items found.", Toast.LENGTH_SHORT).show();
-			
-		listTODO = helper.getItemList();
+		
+		Button btnDeleteAll = (Button) findViewById(R.id.btnDeleteAll);
+		btnDeleteAll.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+						
+				new AlertDialog.Builder(MainActivity.this)
+	               .setMessage("Are you sure you want to delete all the items?")
+	               .setCancelable(false)
+	               .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+	                   public void onClick(DialogInterface dialog, int id) {
+	       				helper.deleteAll();
+	    				refreshView();
+	    				Toast.makeText(getApplicationContext(), "The items have been deleted!", Toast.LENGTH_SHORT).show();	
+	                   }
+	               })
+	               .setNegativeButton("No", null)
+	               .show();
+			}
+		});
+		
 		
 		this.mainListView = (ListView) findViewById(R.id.mainlistView);
+		
 		mainListView.setCacheColorHint(1);
-
-		// Bind the data with the list
-		this.customTODOAdapter = new ListItemAdapter(MainActivity.this,	R.layout.listitem_custom_row, listTODO);
 		mainListView.setAdapter(this.customTODOAdapter);
 		mainListView.setItemsCanFocus(false);
-		mainListView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
-	
+ 
 		registerForContextMenu(mainListView);
+		
+		refreshView();
+	}
+	
+	@Override	
+	public void onResume(){
+		super.onResume();		
+        refreshView();	
 	}
 	
 	@Override
@@ -98,9 +120,27 @@ public class MainActivity extends Activity {
 		helper.checkItem(_ID, checked);
      }
     
+    //Refreshes the list
     public void refreshView(){
+    	listTODO = helper.getItemList();
+    	// Bind the data with the list
+        this.customTODOAdapter = new ListItemAdapter(MainActivity.this,	R.layout.listitem_custom_row, listTODO);
+        mainListView.setAdapter(this.customTODOAdapter);	
     	customTODOAdapter.notifyDataSetChanged();
 		mainListView.refreshDrawableState();	
     }
     
+    @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder(this)
+               .setMessage("Are you sure you want to exit?")
+               .setCancelable(false)
+               .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                   public void onClick(DialogInterface dialog, int id) {
+                        MainActivity.this.finish();
+                   }
+               })
+               .setNegativeButton("No", null)
+               .show();
+    }   
 }

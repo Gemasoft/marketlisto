@@ -1,57 +1,76 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:gravity="top" >
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="bottom"
-        android:orientation="vertical" >
-
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:capitalize="none"
-            android:editable="false"
-            android:focusable="false"
-            android:focusableInTouchMode="false"
-            android:inputType="none"
-            android:text="@string/textbox_new_item_title"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
-
-        <AutoCompleteTextView
-            android:id="@+id/txtNewItemTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:capitalize="characters"
-            android:ems="10" >
+    android:layout_height="match_parent"
+    android:gravity="top" >
+    
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical"
+          tools:ignore="UselessParent" >
 
-            <requestFocus />
-        </AutoCompleteTextView>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal" >
-
-            <Button
-                android:id="@+id/btnCancelAdd"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/button_cancel_new_item" />
-
-            <Button
-                android:id="@+id/btnAddNewItem"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/button_add_new_item" />
+          <TextView
+              android:id="@+id/lblItemName"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:clickable="false"
+              android:focusable="false"
+              android:focusableInTouchMode="false"
+              android:inputType="none"
+              android:text="@string/textbox_new_item_title"
+              android:textAppearance="?android:attr/textAppearanceMedium" />
 
-        </LinearLayout>
+          <AutoCompleteTextView
+              android:id="@+id/txtNewItemTitle"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:inputType="textCapCharacters"
+              android:ems="10" >
 
-    </LinearLayout>
+              <requestFocus />
+          </AutoCompleteTextView>
+
+          <TextView
+              android:id="@+id/lblQuantity"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:clickable="false"
+              android:focusable="false"
+              android:focusableInTouchMode="false"
+              android:inputType="none"
+              android:text="@string/button_quantity"
+              android:textAppearance="?android:attr/textAppearanceMedium"
+              android:visibility="gone" />
+
+          <AutoCompleteTextView
+              android:id="@+id/txtQuantity"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:ems="10"
+              android:inputType="number"
+              android:visibility="gone" />
+
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal" >
+
+              <Button
+                  android:id="@+id/btnCancelAdd"
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_weight="1"
+                  android:text="@string/button_cancel_new_item" />
+
+              <Button
+                  android:id="@+id/btnAddNewItem"
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_weight="1"
+                  android:text="@string/button_add_new_item" />
+          </LinearLayout>
+
+      </LinearLayout>
 
 </RelativeLayout>

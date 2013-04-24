@@ -115,6 +115,13 @@ public class MySQLHelper extends SQLiteOpenHelper {
 		this.close();
 	}
 	
+	public void deleteAll() {
+		// TODO Auto-generated method stub
+		sql = "DELETE FROM Items ";
+		this.getWritableDatabase().execSQL(sql);
+		this.close();
+	}
+	
 	
 }
 

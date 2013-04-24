@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 public class AddItem extends Activity {
 	MySQLHelper helper = new MySQLHelper(this);
+	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
