@@ -1,0 +1,7 @@
+<!--?xml version="1.0" encoding="utf-8"?-->
+<todoitems>
+	<item title="Jam" checked="true"></item>
+	<item title="Mop" checked="false"></item>
+	<item title="Curtains" checked="true"></item>
+	<item title="Soda" checked="false"></item>
+</todoitems>
