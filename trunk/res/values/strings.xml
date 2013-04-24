@@ -5,19 +5,21 @@
     <string name="title_activity_main">MarketListo - Items</string>
     <string name="edit_message">Enter the new item title</string>
     <string name="title_activity_display_message">My Message</string>
-    <string name="app_description">Remember the milk based app</string>
+    <string name="app_description">The simpliest app to shopping.</string>
     <string name="title_activity_splash_screen">Splash Screen</string>
     <string name="title_activity_simple">Simple</string>
     <string name="list_header">Items</string>
-    <string name="button_clear">Clear all boxes</string>
+    <string name="button_clear">Unmark All</string>
     <string name="button_save">Save</string>
-    <string name="title_activity_list_selector">ListSelector</string>
-    <string name="title_activity_custom_row">CustomRow</string>
-    <string name="title_activity_read_from_database">ReadFromDatabase</string>
-    <string name="title_activity_add_item">AddItem</string>
+    <string name="title_activity_list_selector">List Selector</string>
+    <string name="title_activity_custom_row">Custom Row</string>
+    <string name="title_activity_read_from_database">Read From Database</string>
+    <string name="title_activity_add_item">Add new item</string>
     <string name="button_add_new_item">Add</string>
     <string name="button_cancel_new_item">Cancel</string>
-    <string name="button_add_new">Add New Item</string>
-    <string name="textbox_new_item_title">PLEASE TYPE THE NEW ITEM TITLE:</string>
+    <string name="button_add_new">Add New</string>
+    <string name="textbox_new_item_title">Please type the item name:</string>
+    <string name="button_delete_all">Delete All</string>
+    <string name="button_quantity">Quantity:</string>
 
 </resources>
