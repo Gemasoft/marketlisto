@@ -1,0 +1,23 @@
+<resources>
+
+    <string name="app_name">MarketListo</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">MarketListo - Items</string>
+    <string name="edit_message">Enter the new item title</string>
+    <string name="title_activity_display_message">My Message</string>
+    <string name="app_description">Remember the milk based app</string>
+    <string name="title_activity_splash_screen">Splash Screen</string>
+    <string name="title_activity_simple">Simple</string>
+    <string name="list_header">Items</string>
+    <string name="button_clear">Clear all boxes</string>
+    <string name="button_save">Save</string>
+    <string name="title_activity_list_selector">ListSelector</string>
+    <string name="title_activity_custom_row">CustomRow</string>
+    <string name="title_activity_read_from_database">ReadFromDatabase</string>
+    <string name="title_activity_add_item">AddItem</string>
+    <string name="button_add_new_item">Add</string>
+    <string name="button_cancel_new_item">Cancel</string>
+    <string name="button_add_new">Add New Item</string>
+    <string name="textbox_new_item_title">PLEASE TYPE THE NEW ITEM TITLE:</string>
+
+</resources>
