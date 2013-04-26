@@ -1,19 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.gemasoft.marketlisto"
-    android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionCode="3"
+    android:versionName="1.2" >
 
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="15" />
 
     <application
+        android:allowBackup="true"
         android:description="@string/app_description"
         android:icon="@drawable/icon"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".SplashScreen"
+            android:name="com.gemasoft.marketlisto.SplashScreen"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.NoTitleBar" >
             <intent-filter>
@@ -22,28 +24,30 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name="com.gemasoft.marketlisto.MainActivity"
             android:label="@string/title_activity_main" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.gemasoft.marketlisto.SplashScreen" />
         </activity>
+
         <activity
-            android:name=".DisplayMessageActivity"
-            android:label="@string/title_activity_display_message" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.gemasoft.marketlisto.MainActivity" />
-        </activity>
-        <activity
-            android:name=".CustomRow"
+            android:name="com.gemasoft.marketlisto.CustomRow"
             android:label="@string/title_activity_custom_row" >
         </activity>
+
         <activity
-            android:name=".AddItem"
-            android:label="@string/title_activity_add_item" 
-            android:windowSoftInputMode="stateVisible|adjustResize"
-            android:theme="@android:style/Theme.Dialog">
+            android:name="com.gemasoft.marketlisto.AddItem"
+            android:label="@string/title_activity_add_item"
+            android:theme="@android:style/Theme.Dialog"
+            android:windowSoftInputMode="stateVisible|adjustResize" >
+        </activity>
+        <activity
+            android:name="com.gemasoft.marketlisto.StartActivity"      
+            android:label="@string/app_name">
+                   <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.gemasoft.marketlisto.SplashScreen" />
         </activity>
     </application>
 

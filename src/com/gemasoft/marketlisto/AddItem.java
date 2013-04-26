@@ -32,10 +32,10 @@ public class AddItem extends Activity {
 				
 				if(title.length() != 0){
 					helper.insertItem(title, 0);
-					Toast.makeText(getApplicationContext(), "The new item has been added!", Toast.LENGTH_LONG).show();
+					Toast.makeText(getApplicationContext(), getResources().getString(R.string.action_add_performed), Toast.LENGTH_LONG).show();
 					AddItem.this.finish();
 				}else{
-					Toast.makeText(getApplicationContext(), "Please type a valid value!", Toast.LENGTH_LONG).show();
+					Toast.makeText(getApplicationContext(), getResources().getString(R.string.action_add_error), Toast.LENGTH_LONG).show();
 				}
 			}
 		});

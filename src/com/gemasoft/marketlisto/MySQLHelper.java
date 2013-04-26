@@ -9,33 +9,35 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
 public class MySQLHelper extends SQLiteOpenHelper {
 	
 	public String sql;
 	
+	private static final int DATABASE_VERSION = 4;
+	
 	public MySQLHelper(Context context){
-		super(context, "Items", null, 1);
+		super(context, "Items", null, DATABASE_VERSION);
 	}
 
 	@Override
 	public void onCreate(SQLiteDatabase db) {
-		// TODO Auto-generated method stub
+		// TODO CREATE TABLE
 		sql = "CREATE TABLE Items("+_ID+" INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT, checked INTEGER)";
 		db.execSQL(sql);
 	}
 
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-		// TODO Auto-generated method stub
-		Log.w("SqlHelper", "Upgrading database from version " + oldVersion	+ " to " + newVersion + ", which will destroy all old data");
+		// TODO UPGRADE DATABASE
+		//Log.w("SqlHelper", "Upgrading database from version " + oldVersion	+ " to " + newVersion + ", which will destroy all old data");
 		sql = "DROP TABLE IF EXISTS Items";
 		db.execSQL(sql);
 		onCreate(db);
 	}	
 	
-	public void insertItem(String title, Integer checked){			
+	public void insertItem(String title, Integer checked){	
+		// TODO INSERT ITEM
 		ContentValues values = new ContentValues();		
 		values.put("title", title);
 		values.put("checked", checked);	
@@ -43,17 +45,17 @@ public class MySQLHelper extends SQLiteOpenHelper {
 	}
 
 	public void openDatabase() {
-		// TODO Auto-generated method stub
+		// TODO OPEN DATABASE
 		this.getWritableDatabase();
 	}
 
 	public void closeDatabase() {
-		// TODO Auto-generated method stub
+		// TODO CLOSE DATABASE
 		this.close();
 	}
 	
 	public ArrayList<ListItem> getItemList(){
-		// TODO Auto-generated method stub
+		// TODO GET ITEMS LIST
 		ArrayList<ListItem> itemsList = new ArrayList<ListItem>();	
 		String columns[] = {_ID, "title", "checked"};
 		Cursor c = this.getReadableDatabase().query("Items", columns, null, null, null, null,  null);
@@ -83,6 +85,7 @@ public class MySQLHelper extends SQLiteOpenHelper {
 	}
 
 	public int getItemsTotal(){
+		// TODO GET COUNT
 		String columns[] = {_ID, "title", "checked"};
 		Cursor c = this.getReadableDatabase().query("Items", columns, null, null, null, null,  null);	
 		int count = c.getCount();
@@ -91,37 +94,45 @@ public class MySQLHelper extends SQLiteOpenHelper {
 	}
 
 	public void update(String string, ContentValues values, String string2,	String[] strings) {
-		// TODO Auto-generated method stub
+		// TODO UPDATE ITEM
 		this.getWritableDatabase().update("Items",values,"_ID=?",null);
 		this.close();
 	}
 
 	public void clearSelections() {
+		// TODO CLEAR ITEMS SELECTION
 		sql = "UPDATE Items SET checked = 0";
 		this.getWritableDatabase().execSQL(sql);
 		this.close();
 	}
 	
 	public void checkItem(int _ID, int checked){	
-		sql = "UPDATE Items SET checked = " + Integer.toString(checked)  + " WHERE _ID = " + Integer.toString(_ID);
+		// TODO UPDATE ITEMS
+		sql = "UPDATE Items SET checked = " + Integer.toString(checked)  + " WHERE _ID = " + Integer.toString(_ID).trim();
 		this.getWritableDatabase().execSQL(sql);
 		this.close();
 	}
 
 	public void deleteItem(long id) {
-		// TODO Auto-generated method stub
+		// TODO DELETE ITEM
 		sql = "DELETE FROM Items WHERE _ID = " + id;
 		this.getWritableDatabase().execSQL(sql);
 		this.close();
 	}
 	
 	public void deleteAll() {
-		// TODO Auto-generated method stub
+		// TODO DELETE ALL
 		sql = "DELETE FROM Items ";
 		this.getWritableDatabase().execSQL(sql);
 		this.close();
 	}
 	
-	
+	public void deleteChecked() {
+		// DELETE CHECKED ITEMS
+		sql = "DELETE FROM Items WHERE checked = 1";
+		this.getWritableDatabase().execSQL(sql);
+		this.close();
+	}
+		
 }
 

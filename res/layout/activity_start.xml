@@ -1,0 +1,63 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".StartActivity" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <ListView
+                android:id="@+id/mainlistView"
+                style="android:listViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:choiceMode="singleChoice" >
+            </ListView>
+
+            <LinearLayout
+                android:id="@+id/fullscreen_content_controls"
+                style="?buttonBarStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:background="@color/black_overlay"
+                android:orientation="horizontal"
+                tools:ignore="UselessParent" >
+
+                <ImageButton
+                    android:id="@+id/btnSend"
+                      style="?buttonBarButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/button_add_new"
+                    android:onClick="addItem"
+                    android:src="@android:drawable/ic_menu_add" />
+
+                <ImageButton
+                    android:id="@+id/btnClear"
+                    style="?buttonBarButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/button_clear"
+                    android:src="@android:drawable/ic_menu_close_clear_cancel" />
+                
+ 				<ImageButton
+                    android:id="@+id/btnDeleteChecked"
+                    style="?buttonBarButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@android:drawable/ic_menu_delete" 
+                    android:contentDescription="@string/button_delete_all"/>
+                
+            </LinearLayout>
+        </LinearLayout>
+
+</FrameLayout>
