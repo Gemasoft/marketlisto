@@ -23,13 +23,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="com.gemasoft.marketlisto.MainActivity"
-            android:label="@string/title_activity_main" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.gemasoft.marketlisto.SplashScreen" />
-        </activity>
 
         <activity
             android:name="com.gemasoft.marketlisto.CustomRow"
