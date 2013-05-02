@@ -2,15 +2,18 @@ package com.gemasoft.marketlisto;
 
 import android.os.Bundle;
 import android.app.Activity;
-import android.view.Menu;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnKeyListener;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class AddItem extends Activity {
 	MySQLHelper helper = new MySQLHelper(this);
+	int isAdded = 0;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -24,7 +27,7 @@ public class AddItem extends Activity {
 			}
 		});
     	
-    	Button btnAdd = (Button) findViewById(R.id.btnAddNewItem);
+    	final Button btnAdd = (Button) findViewById(R.id.btnAddNewItem);
     	btnAdd.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 			AutoCompleteTextView newItem = (AutoCompleteTextView)  findViewById(R.id.txtNewItemTitle);
@@ -39,11 +42,19 @@ public class AddItem extends Activity {
 				}
 			}
 		});
-    }
+    	
+    	TextView txtNewItemTitle = (TextView) findViewById(R.id.txtNewItemTitle);
+    	txtNewItemTitle.setOnKeyListener(new OnKeyListener(){
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_add_item, menu);
-        return true;
+			public boolean onKey(View v, int keyCode, KeyEvent event) {
+				if (keyCode == 66 && isAdded == 0){					
+					btnAdd.performClick();
+					isAdded = 1;
+				}		
+				return false;
+			}	
+    		
+    	});
+    	
     }
 }

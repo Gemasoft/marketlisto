@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="empty_string"></string>
     <string name="app_name">MarketListo</string>
     <string name="menu_settings">Settings</string>
@@ -20,18 +21,14 @@
     <string name="textbox_new_item_title">Please type the item name:</string>
     <string name="button_delete_all">Delete checked</string>
     <string name="button_quantity">Quantity:</string>
-    
-    <string name="button_clear_alert">The checkboxes have been cleared!</string>   
-    <string name="button_delete_checked_alert">The items have been deleted!</string>  
-    <string name="button_delete_checked_confirmation">"Are you sure you want to delete the selected items?"</string> 
-    <string name="button_delete_checked_performed">"The item has been deleted!"</string> 
+    <string name="button_clear_alert">The checkboxes have been cleared!</string>
+    <string name="button_delete_checked_alert">The items have been deleted!</string>
+    <string name="button_delete_checked_confirmation">"Are you sure you want to delete the selected items?"</string>
+    <string name="button_delete_checked_performed">"The item has been deleted!"</string>
+    <string name="exit_confirmation"> "Are you sure you want to exit?"</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_add_performed">"The new item has been added!"</string>
+    <string name="action_add_error">"Please type a valid value!"</string>
 
-    <string name="exit_confirmation"> "Are you sure you want to exit?"</string> 
-    
-    <string name="action_delete">Delete</string>   
-    <string name="action_cancel">Cancel</string> 
-
-    <string name="action_add_performed">"The new item has been added!"</string>   
-    <string name="action_add_error">"Please type a valid value!"</string>  
-    
 </resources>

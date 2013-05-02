@@ -5,15 +5,16 @@
     android:longClickable="true"
     android:orientation="horizontal"
     android:padding="10dp" >
-    
-     <CheckBox
-         android:id="@+id/cbxChecked"
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:button="@drawable/checkbox_selector"
-         android:checked="false"
-         android:longClickable="true"
-         android:clickable="true" 
-         android:onClick="changeSelection">      
-     </CheckBox>   
+
+    <CheckBox
+        android:id="@+id/cbxChecked"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:button="@drawable/checkbox_selector"
+        android:checked="false"
+        android:clickable="true"
+        android:longClickable="true"
+        android:onClick="changeSelection" >
+    </CheckBox>
+
 </LinearLayout>
