@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
@@ -112,6 +113,10 @@ public class StartActivity extends Activity {
 	    {  	
 	    	CheckBox cBox = (CheckBox) v;
 			helper.checkItem((Integer)cBox.getTag(), cBox.isChecked() ? 1 : 0);
+			if(cBox.isChecked())
+				cBox.setPaintFlags(Paint.STRIKE_THRU_TEXT_FLAG );	
+			else
+				cBox.setPaintFlags(Paint.LINEAR_TEXT_FLAG );
 	     }
 	    
 	    //Refreshes the list

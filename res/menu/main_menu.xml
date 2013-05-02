@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/menu_add_item"
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/menu_add_item"
         android:icon="@drawable/icon"
-          android:title="@string/button_add_new"/>
-    
-        <item android:id="@+id/menu_unmark"
-		          android:icon="@drawable/icon"
-		          android:title="@string/button_clear" />
-		  
-    <item android:id="@+id/menu_delete_all"
-		          android:icon="@drawable/icon"
-		          android:title="@string/button_delete_all" />
+        android:title="@string/button_add_new"/>
+    <item
+        android:id="@+id/menu_unmark"
+        android:icon="@drawable/icon"
+        android:title="@string/button_clear"/>
+    <item
+        android:id="@+id/menu_delete_all"
+        android:icon="@drawable/icon"
+        android:title="@string/button_delete_all"/>
 
 </menu>

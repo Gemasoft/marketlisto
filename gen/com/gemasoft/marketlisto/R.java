@@ -29,10 +29,13 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int btn_check_on=0x7f020002;
         public static final int checkbox_selector=0x7f020003;
         public static final int ic_action_search=0x7f020004;
-        public static final int ic_menu_unmark=0x7f020005;
-        public static final int ic_splash=0x7f020006;
-        public static final int icon=0x7f020007;
-        public static final int tile=0x7f020008;
+        public static final int ic_launcher=0x7f020005;
+        public static final int ic_menu_add=0x7f020006;
+        public static final int ic_menu_discard=0x7f020007;
+        public static final int ic_menu_unmark=0x7f020008;
+        public static final int ic_splash=0x7f020009;
+        public static final int icon=0x7f02000a;
+        public static final int tile=0x7f02000b;
     }
     public static final class id {
         public static final int btnAddNewItem=0x7f090005;
@@ -46,10 +49,9 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int lblItemName=0x7f090000;
         public static final int lblQuantity=0x7f090002;
         public static final int mainlistView=0x7f090007;
-        public static final int menu_add_item=0x7f09000e;
-        public static final int menu_delete_all=0x7f090010;
-        public static final int menu_settings=0x7f09000d;
-        public static final int menu_unmark=0x7f09000f;
+        public static final int menu_add_item=0x7f09000d;
+        public static final int menu_delete_all=0x7f09000f;
+        public static final int menu_unmark=0x7f09000e;
         public static final int txtNewItemTitle=0x7f090001;
         public static final int txtQuantity=0x7f090003;
     }
@@ -60,15 +62,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int listitem_custom_row=0x7f030003;
     }
     public static final class menu {
-        public static final int activity_add_item=0x7f080000;
-        public static final int activity_display_message=0x7f080001;
-        public static final int activity_list_selector=0x7f080002;
-        public static final int activity_main=0x7f080003;
-        public static final int activity_read_from_database=0x7f080004;
-        public static final int activity_simple=0x7f080005;
-        public static final int activity_splash_screen=0x7f080006;
-        public static final int listitem_custom_row=0x7f080007;
-        public static final int main_menu=0x7f080008;
+        public static final int main_menu=0x7f080000;
     }
     public static final class string {
         public static final int action_add_error=0x7f06001c;
@@ -117,6 +111,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
          used for button bars depending on the API level.
          ?android:attr/buttonBarStyle is new as of API 11 so this is
          necessary to support previous API levels.
+
     
            <p>Includes the following attributes:</p>
            <table>

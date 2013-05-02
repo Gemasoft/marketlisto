@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import android.app.Activity;
 import android.content.Context;
 import android.database.Cursor;
+import android.graphics.Paint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,7 +52,8 @@ public class ListItemAdapter extends ArrayAdapter<ListItem>{
 		holder.cbxChecked.setTag(listItem._ID);
 		holder.cbxChecked.setText(listItem.title);
 		holder.cbxChecked.setChecked(listItem.checked);
-		
+		if(listItem.checked)
+			holder.cbxChecked.setPaintFlags(Paint.STRIKE_THRU_TEXT_FLAG );	
 		return row;
 	}
 	

@@ -13,6 +13,4 @@ public class ListItem {
 		this.title = title;
 		this._ID = _ID;
 	}
-	
-	
 }

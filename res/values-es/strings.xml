@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="empty_string"></string>
     <string name="app_name">MarketListo</string>
     <string name="menu_settings">Opciones</string>
@@ -20,17 +21,14 @@
     <string name="textbox_new_item_title">Agrega el nombre del elemento:</string>
     <string name="button_delete_all">Borrar seleccionadas</string>
     <string name="button_quantity">Cantidad:</string>
-
-    <string name="button_clear_alert">¡Se ha limpiado la seleccion de elementos!</string>   
+    <string name="button_clear_alert">¡Se ha limpiado la seleccion de elementos!</string>
     <string name="button_delete_checked_alert">¡Se han borrado los elementos seleccionados!</string>
-    <string name="button_delete_checked_confirmation">"¿Estas seguro que quieres borrar los elementos seleccionados?"</string> 
-    <string name="button_delete_checked_performed">"¡El elemento ha sido borrado!"</string> 
-        
-    <string name="exit_confirmation"> "¿Estas seguro que quieres salir?"</string> 
-       
- 	<string name="action_delete">Eliminar</string>   
-    <string name="action_cancel">Cancelar</string>   
- 
-    <string name="action_add_performed">"¡Se añadio el nuevo elemento!"</string>   
-    <string name="action_add_error">"¡Por favor escribe un valor valido!"</string>  
+    <string name="button_delete_checked_confirmation">"¿Estas seguro que quieres borrar los elementos seleccionados?"</string>
+    <string name="button_delete_checked_performed">"¡El elemento ha sido borrado!"</string>
+    <string name="exit_confirmation"> "¿Estas seguro que quieres salir?"</string>
+    <string name="action_delete">Eliminar</string>
+    <string name="action_cancel">Cancelar</string>
+    <string name="action_add_performed">"¡Se añadio el nuevo elemento!"</string>
+    <string name="action_add_error">"¡Por favor escribe un valor valido!"</string>
+
 </resources>
