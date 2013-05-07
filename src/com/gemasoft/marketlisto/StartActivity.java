@@ -2,12 +2,10 @@ package com.gemasoft.marketlisto;
 
 import java.util.ArrayList;
 
-import android.R.string;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.ListActivity;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -17,7 +15,6 @@ import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
-import android.util.SparseBooleanArray;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.Menu;
@@ -28,7 +25,6 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.CheckBox;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 @SuppressLint("ShowToast")
@@ -92,10 +88,10 @@ public class StartActivity extends Activity {
 							public void onClick(DialogInterface dialog,	int id) {
 								helper.deleteChecked();
 								Toast.makeText(getApplicationContext(),	getResources().getString(R.string.button_delete_checked_alert),	Toast.LENGTH_SHORT).show();
+								refreshView();
+								CheckedCounter();
 							}
 						}).setNegativeButton("No", null).show();	
-		refreshView();
-		CheckedCounter();
 	}
 
 	@Override
@@ -222,6 +218,7 @@ public class StartActivity extends Activity {
 
 	//ITEMS COUNTER
 	public void CheckedCounter(){
+		@SuppressWarnings("unused")
 		int counter = 0;
 
 		ListView mainListView = (ListView) findViewById(R.id.mainlistView);
