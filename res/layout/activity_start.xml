@@ -8,7 +8,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical" >
+        android:orientation="vertical"
+        tools:ignore="UselessParent" >
 
         <ListView
             android:id="@+id/mainlistView"
@@ -21,9 +22,9 @@
 
         <LinearLayout
             android:id="@+id/fullscreen_content_controls"
-            style="?buttonBarStyle"
+            style="?android:attr/progressBarStyleLarge"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:layout_height="50dp"
             android:layout_gravity="bottom"
             android:background="@color/black_overlay"
             android:orientation="horizontal"
@@ -34,28 +35,33 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@drawable/custom_button"                
                 android:contentDescription="@string/button_add_new"
+                android:onClick="addItem"
                 android:src="@drawable/ic_menu_add" />
 
             <ImageButton
                 android:id="@+id/btnClear"
-                style="?buttonBarButtonStyle"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                 android:background="@drawable/custom_button"                
                 android:contentDescription="@string/button_clear"
+                android:onClick="clearMarked"
                 android:src="@drawable/ic_menu_unmark" />
 
             <ImageButton
                 android:id="@+id/btnDeleteChecked"
-                style="?buttonBarButtonStyle"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                 android:background="@drawable/custom_button"                 
                 android:contentDescription="@string/button_delete_all"
-                android:src="@drawable/ic_menu_discard" />
-
+                android:onClick="deleteItem"
+                android:src="@drawable/ic_menu_discard"
+                android:text="@string/button_delete_all" />
         </LinearLayout>
+
     </LinearLayout>
 
 </FrameLayout>

@@ -30,5 +30,5 @@
     <string name="action_cancel">Cancelar</string>
     <string name="action_add_performed">"¡Se añadio el nuevo elemento!"</string>
     <string name="action_add_error">"¡Por favor escribe un valor valido!"</string>
-
+    <string name="search_title">Buscar</string>
 </resources>

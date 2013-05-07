@@ -28,14 +28,19 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int btn_check_off=0x7f020001;
         public static final int btn_check_on=0x7f020002;
         public static final int checkbox_selector=0x7f020003;
-        public static final int ic_action_search=0x7f020004;
-        public static final int ic_launcher=0x7f020005;
-        public static final int ic_menu_add=0x7f020006;
-        public static final int ic_menu_discard=0x7f020007;
-        public static final int ic_menu_unmark=0x7f020008;
-        public static final int ic_splash=0x7f020009;
-        public static final int icon=0x7f02000a;
-        public static final int tile=0x7f02000b;
+        public static final int custom_button=0x7f020004;
+        public static final int ic_action_search=0x7f020005;
+        public static final int ic_icon=0x7f020006;
+        public static final int ic_launcher=0x7f020007;
+        public static final int ic_menu_add=0x7f020008;
+        public static final int ic_menu_discard=0x7f020009;
+        public static final int ic_menu_unmark=0x7f02000a;
+        public static final int ic_notification=0x7f02000b;
+        public static final int ic_search=0x7f02000c;
+        public static final int ic_splash=0x7f02000d;
+        public static final int icon=0x7f02000e;
+        public static final int icon_big=0x7f02000f;
+        public static final int tile=0x7f020010;
     }
     public static final class id {
         public static final int btnAddNewItem=0x7f090005;
@@ -48,10 +53,9 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int imgLogo=0x7f090006;
         public static final int lblItemName=0x7f090000;
         public static final int lblQuantity=0x7f090002;
+        public static final int main_menu=0x7f09000d;
         public static final int mainlistView=0x7f090007;
-        public static final int menu_add_item=0x7f09000d;
-        public static final int menu_delete_all=0x7f09000f;
-        public static final int menu_unmark=0x7f09000e;
+        public static final int menu_counter=0x7f09000e;
         public static final int txtNewItemTitle=0x7f090001;
         public static final int txtQuantity=0x7f090003;
     }
@@ -87,6 +91,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int exit_confirmation=0x7f060018;
         public static final int list_header=0x7f060008;
         public static final int menu_settings=0x7f060002;
+        public static final int search_title=0x7f06001d;
         public static final int textbox_new_item_title=0x7f060011;
         public static final int title_activity_add_item=0x7f06000d;
         public static final int title_activity_custom_row=0x7f06000c;
@@ -98,9 +103,12 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     public static final class style {
         public static final int AppTheme=0x7f070000;
         public static final int ButtonBar=0x7f070002;
-        public static final int ButtonBarButton=0x7f070003;
-        public static final int FullscreenActionBarStyle=0x7f070004;
+        public static final int ButtonBarButton=0x7f070005;
+        public static final int CustomButton=0x7f070006;
+        public static final int FullscreenActionBarStyle=0x7f070007;
         public static final int FullscreenTheme=0x7f070001;
+        public static final int layout=0x7f070004;
+        public static final int text=0x7f070003;
     }
     public static final class xml {
         public static final int todolist=0x7f040000;

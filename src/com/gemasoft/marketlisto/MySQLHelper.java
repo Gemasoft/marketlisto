@@ -9,6 +9,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.database.sqlite.SQLiteStatement;
 
 public class MySQLHelper extends SQLiteOpenHelper {
 	
@@ -86,13 +87,21 @@ public class MySQLHelper extends SQLiteOpenHelper {
 
 	public int getItemsTotal(){
 		// TODO GET COUNT
-		String columns[] = {_ID, "title", "checked"};
+		String columns[] = {_ID};
 		Cursor c = this.getReadableDatabase().query("Items", columns, null, null, null, null,  null);	
 		int count = c.getCount();
 		this.close();
 		return 	count;
 	}
-
+	
+	public int getCheckedItems(){
+		// TODO GET CHECKED
+				Cursor c = this.getReadableDatabase().rawQuery("select _ID from Items where checked = 1",null);
+				int count = c.getCount();
+				this.close();
+				return 	count;
+	}
+	
 	public void update(String string, ContentValues values, String string2,	String[] strings) {
 		// TODO UPDATE ITEM
 		this.getWritableDatabase().update("Items",values,"_ID=?",null);
