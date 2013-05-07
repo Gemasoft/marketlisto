@@ -11,25 +11,42 @@
         tools:ignore="UselessParent" >
 
         <TextView
-            android:id="@+id/lblItemName"
+            android:id="@+id/lblQuantity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:clickable="false"
             android:focusable="false"
             android:focusableInTouchMode="false"
             android:inputType="none"
-            android:text="@string/textbox_new_item_title"
+            android:text="@string/button_quantity"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <AutoCompleteTextView
-            android:id="@+id/txtNewItemTitle"
+            android:id="@+id/txtQuantity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textCapCharacters" >
-
-            <requestFocus />
+            android:ems="1"
+            android:inputType="number" >
+            <requestFocus />
         </AutoCompleteTextView>
+
+        <TextView
+            android:id="@+id/lblPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:inputType="none"
+            android:text="@string/textbox_price"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <AutoCompleteTextView
+            android:id="@+id/txtRowDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="2"
+            android:inputType="numberDecimal" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -37,22 +54,24 @@
             android:orientation="horizontal" >
 
             <Button
-                android:id="@+id/btnCancelAdd"
+                android:id="@+id/btnCancelCapture"
+                style="@style/CustomButton"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/custom_button"
-                android:text="@string/button_cancel_new_item"
-                  style="@style/CustomButton" />
+                android:text="@string/action_cancel" 
+                android:onClick="cancelCapture"/>
 
             <Button
-                android:id="@+id/btnAddNewItem"
+                android:id="@+id/btnCapture"
+                style="@style/CustomButton"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/button_add_new_item" 
                 android:background="@drawable/custom_button"
-                  style="@style/CustomButton"/>
+                android:text="@string/button_capture" 
+                android:onClick="performCapture"/>
         </LinearLayout>
     </LinearLayout>
 

@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
+import android.widget.TextView;
 
 
 public class ListItemAdapter extends ArrayAdapter<ListItem> {
@@ -27,6 +28,7 @@ public class ListItemAdapter extends ArrayAdapter<ListItem> {
 
 	static class ListItemHolder {
 		CheckBox cbxChecked;
+		TextView txtRowDetails;
 	}
 
 	public ListItemAdapter(Context context, int layoutResourceId, ArrayList<ListItem> dataItems) {
@@ -48,6 +50,8 @@ public class ListItemAdapter extends ArrayAdapter<ListItem> {
 
 			holder = new ListItemHolder();
 			holder.cbxChecked = (CheckBox) row.findViewById(R.id.cbxChecked);
+			holder.txtRowDetails = (TextView) row.findViewById(R.id.txtRowDetails);
+			
 			row.setTag(holder);
 		} else {
 			holder = (ListItemHolder) row.getTag();
@@ -59,11 +63,13 @@ public class ListItemAdapter extends ArrayAdapter<ListItem> {
 		holder.cbxChecked.setText(listItem.title);
 		holder.cbxChecked.setChecked(listItem.checked);
 		
+		holder.txtRowDetails.setText(listItem.quantity + " * $" + listItem.price + "  ");
+		
 		if (listItem.checked) {
 			holder.cbxChecked.setPaintFlags(Paint.STRIKE_THRU_TEXT_FLAG);
 		}
 		
-		ThinPencilHandwriting = Typeface.createFromAsset(context.getAssets(), "fonts/ThinPencilHandwriting.ttf");
+		//ThinPencilHandwriting = Typeface.createFromAsset(context.getAssets(), "fonts/ThinPencilHandwriting.ttf");
 		holder.cbxChecked.setTypeface(ThinPencilHandwriting, Typeface.BOLD);
 		
 		

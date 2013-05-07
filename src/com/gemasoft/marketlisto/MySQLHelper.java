@@ -9,139 +9,115 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.database.sqlite.SQLiteStatement;
 
 public class MySQLHelper extends SQLiteOpenHelper {
 	
-	public String sql;
-	
-	private static final int DATABASE_VERSION = 4;
+	private static final String DATABASE_NAME = "Items";
+	private static final String TABLE_ITEMS = "Items";
+	private static final int DATABASE_VERSION = 5;
 	
 	public MySQLHelper(Context context){
-		super(context, "Items", null, DATABASE_VERSION);
+		super(context, DATABASE_NAME, null, DATABASE_VERSION);
 	}
 
 	@Override
 	public void onCreate(SQLiteDatabase db) {
-		// TODO CREATE TABLE
-		sql = "CREATE TABLE Items("+_ID+" INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT, checked INTEGER)";
-		db.execSQL(sql);
+		db.execSQL("CREATE TABLE Items("+_ID+" INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT, checked INTEGER, quantity INTEGER, price FLOAT)");
 	}
 
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-		// TODO UPGRADE DATABASE
-		//Log.w("SqlHelper", "Upgrading database from version " + oldVersion	+ " to " + newVersion + ", which will destroy all old data");
-		sql = "DROP TABLE IF EXISTS Items";
-		db.execSQL(sql);
+		db.execSQL("DROP TABLE IF EXISTS " + TABLE_ITEMS);
 		onCreate(db);
 	}	
 	
 	public void insertItem(String title, Integer checked){	
-		// TODO INSERT ITEM
 		ContentValues values = new ContentValues();		
 		values.put("title", title);
 		values.put("checked", checked);	
-		this.getWritableDatabase().insert("Items", null, values);
-	}
-
-	public void openDatabase() {
-		// TODO OPEN DATABASE
-		this.getWritableDatabase();
-	}
-
-	public void closeDatabase() {
-		// TODO CLOSE DATABASE
+		values.put("quantity", 0);	
+		values.put("price", 0);	
+		this.getWritableDatabase().insert(TABLE_ITEMS, null, values);
 		this.close();
 	}
-	
+
 	public ArrayList<ListItem> getItemList(){
-		// TODO GET ITEMS LIST
-		ArrayList<ListItem> itemsList = new ArrayList<ListItem>();	
-		String columns[] = {_ID, "title", "checked"};
-		Cursor c = this.getReadableDatabase().query("Items", columns, null, null, null, null,  null);
 		
-		int id, tt, ck;
+		ArrayList<ListItem> itemsList = new ArrayList<ListItem>();	
+		
+		String columns[] = {_ID, "title", "checked", "quantity", "price"};
+		
+		Cursor c = this.getReadableDatabase().query(TABLE_ITEMS, columns, null, null, null, null,  null);
+		
+		int id, tt, ck, qt, pr;
 		
 		id = c.getColumnIndex(_ID);
 		tt = c.getColumnIndex("title");
 		ck = c.getColumnIndex("checked");
+		qt = c.getColumnIndex("quantity");
+		pr = c.getColumnIndex("price");
 		
 		int counter = 0;
+		
 		for(c.moveToFirst();!c.isAfterLast();c.moveToNext()){
-			ListItem listItem = new ListItem();
-			listItem._ID = c.getInt(id);
-			
-			if (c.getInt(ck) == 0){
-				listItem.checked = false;
-			}else{
-				listItem.checked = true;
-			}
-			listItem.title = c.getString(tt);			
-			itemsList.add(counter, listItem);
+			itemsList.add(counter, new ListItem(c.getInt(id),c.getInt(ck) != 0,c.getString(tt),c.getInt(qt),c.getFloat(pr)));
 			counter++;
 		}
+		
 		this.close();
 		return itemsList;		
 	}
 
 	public int getItemsTotal(){
-		// TODO GET COUNT
 		String columns[] = {_ID};
-		Cursor c = this.getReadableDatabase().query("Items", columns, null, null, null, null,  null);	
+		Cursor c = this.getReadableDatabase().query(TABLE_ITEMS, columns, null, null, null, null,  null);	
 		int count = c.getCount();
 		this.close();
 		return 	count;
 	}
 	
 	public int getCheckedItems(){
-		// TODO GET CHECKED
-				Cursor c = this.getReadableDatabase().rawQuery("select _ID from Items where checked = 1",null);
+				Cursor c = this.getReadableDatabase().rawQuery("select _ID from " + TABLE_ITEMS + " where checked = 1",null);
 				int count = c.getCount();
 				this.close();
 				return 	count;
 	}
 	
-	public void update(String string, ContentValues values, String string2,	String[] strings) {
-		// TODO UPDATE ITEM
-		this.getWritableDatabase().update("Items",values,"_ID=?",null);
+	public float getTotalPrice(){
+		Cursor c = this.getReadableDatabase().rawQuery("select SUM(quantity * price) from " + TABLE_ITEMS + " where checked = 1",null);
+			if(c.moveToFirst()) {
+			    return c.getFloat(0);
+			}else{			
+				return 0;
+			}
+}
+	
+	public void clearSelections() {
+		this.getWritableDatabase().execSQL("UPDATE Items SET checked = 0, quantity = 0, price=0");
 		this.close();
 	}
 
-	public void clearSelections() {
-		// TODO CLEAR ITEMS SELECTION
-		sql = "UPDATE Items SET checked = 0";
-		this.getWritableDatabase().execSQL(sql);
-		this.close();
-	}
-	
-	public void checkItem(int _ID, int checked){	
-		// TODO UPDATE ITEMS
-		sql = "UPDATE Items SET checked = " + Integer.toString(checked)  + " WHERE _ID = " + Integer.toString(_ID).trim();
-		this.getWritableDatabase().execSQL(sql);
+	public void checkItem(int _ID, int checked, CharSequence quantity, CharSequence price){	
+		this.getWritableDatabase().execSQL("UPDATE " + TABLE_ITEMS + " SET checked = " + Integer.toString(checked)  + ", quantity = " + quantity + ", price = " + price + " WHERE _ID = " + Integer.toString(_ID).trim());
 		this.close();
 	}
 
 	public void deleteItem(long id) {
-		// TODO DELETE ITEM
-		sql = "DELETE FROM Items WHERE _ID = " + id;
-		this.getWritableDatabase().execSQL(sql);
+		this.getWritableDatabase().execSQL("DELETE FROM " + TABLE_ITEMS + " WHERE _ID = " + id);
 		this.close();
 	}
 	
 	public void deleteAll() {
-		// TODO DELETE ALL
-		sql = "DELETE FROM Items ";
-		this.getWritableDatabase().execSQL(sql);
+		this.getWritableDatabase().execSQL("DELETE FROM " + TABLE_ITEMS);
 		this.close();
 	}
 	
 	public void deleteChecked() {
 		// DELETE CHECKED ITEMS
-		sql = "DELETE FROM Items WHERE checked = 1";
-		this.getWritableDatabase().execSQL(sql);
+		this.getWritableDatabase().execSQL("DELETE FROM " + TABLE_ITEMS + " WHERE checked = 1");
 		this.close();
 	}
 		
+
 }
 

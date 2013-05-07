@@ -23,6 +23,15 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int background_dark=0x7f050002;
         public static final int black_overlay=0x7f050000;
     }
+    public static final class dimen {
+        /** 
+         Customize dimensions originally defined in res/values/dimens.xml (such as
+         screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
+    
+         */
+        public static final int activity_horizontal_margin=0x7f060000;
+        public static final int activity_vertical_margin=0x7f060001;
+    }
     public static final class drawable {
         public static final int background=0x7f020000;
         public static final int btn_check_off=0x7f020001;
@@ -43,72 +52,79 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int tile=0x7f020010;
     }
     public static final class id {
-        public static final int btnAddNewItem=0x7f090005;
-        public static final int btnCancelAdd=0x7f090004;
-        public static final int btnClear=0x7f09000a;
-        public static final int btnDeleteChecked=0x7f09000b;
-        public static final int btnSend=0x7f090009;
-        public static final int cbxChecked=0x7f09000c;
-        public static final int fullscreen_content_controls=0x7f090008;
-        public static final int imgLogo=0x7f090006;
-        public static final int lblItemName=0x7f090000;
-        public static final int lblQuantity=0x7f090002;
-        public static final int main_menu=0x7f09000d;
-        public static final int mainlistView=0x7f090007;
-        public static final int menu_counter=0x7f09000e;
-        public static final int txtNewItemTitle=0x7f090001;
-        public static final int txtQuantity=0x7f090003;
+        public static final int btnAddNewItem=0x7f0a0003;
+        public static final int btnCancelAdd=0x7f0a0002;
+        public static final int btnCancelCapture=0x7f0a0008;
+        public static final int btnCapture=0x7f0a0009;
+        public static final int btnClear=0x7f0a000e;
+        public static final int btnDeleteChecked=0x7f0a000f;
+        public static final int btnSend=0x7f0a000d;
+        public static final int cbxChecked=0x7f0a0010;
+        public static final int fullscreen_content_controls=0x7f0a000c;
+        public static final int imgLogo=0x7f0a000a;
+        public static final int lblItemName=0x7f0a0000;
+        public static final int lblPrice=0x7f0a0006;
+        public static final int lblQuantity=0x7f0a0004;
+        public static final int main_menu=0x7f0a0011;
+        public static final int mainlistView=0x7f0a000b;
+        public static final int menu_counter=0x7f0a0012;
+        public static final int txtNewItemTitle=0x7f0a0001;
+        public static final int txtQuantity=0x7f0a0005;
+        public static final int txtRowDetails=0x7f0a0007;
     }
     public static final class layout {
         public static final int activity_add_item=0x7f030000;
-        public static final int activity_splash_screen=0x7f030001;
-        public static final int activity_start=0x7f030002;
-        public static final int listitem_custom_row=0x7f030003;
+        public static final int activity_capture=0x7f030001;
+        public static final int activity_splash_screen=0x7f030002;
+        public static final int activity_start=0x7f030003;
+        public static final int listitem_custom_row=0x7f030004;
     }
     public static final class menu {
-        public static final int main_menu=0x7f080000;
+        public static final int main_menu=0x7f090000;
     }
     public static final class string {
-        public static final int action_add_error=0x7f06001c;
-        public static final int action_add_performed=0x7f06001b;
-        public static final int action_cancel=0x7f06001a;
-        public static final int action_delete=0x7f060019;
-        public static final int app_description=0x7f060005;
-        public static final int app_name=0x7f060001;
-        public static final int button_add_new=0x7f060010;
-        public static final int button_add_new_item=0x7f06000e;
-        public static final int button_cancel_new_item=0x7f06000f;
-        public static final int button_clear=0x7f060009;
-        public static final int button_clear_alert=0x7f060014;
-        public static final int button_delete_all=0x7f060012;
-        public static final int button_delete_checked_alert=0x7f060015;
-        public static final int button_delete_checked_confirmation=0x7f060016;
-        public static final int button_delete_checked_performed=0x7f060017;
-        public static final int button_quantity=0x7f060013;
-        public static final int button_save=0x7f06000a;
-        public static final int edit_message=0x7f060004;
-        public static final int empty_string=0x7f060000;
-        public static final int exit_confirmation=0x7f060018;
-        public static final int list_header=0x7f060008;
-        public static final int menu_settings=0x7f060002;
-        public static final int search_title=0x7f06001d;
-        public static final int textbox_new_item_title=0x7f060011;
-        public static final int title_activity_add_item=0x7f06000d;
-        public static final int title_activity_custom_row=0x7f06000c;
-        public static final int title_activity_list_selector=0x7f06000b;
-        public static final int title_activity_main=0x7f060003;
-        public static final int title_activity_simple=0x7f060007;
-        public static final int title_activity_splash_screen=0x7f060006;
+        public static final int action_add_error=0x7f07001c;
+        public static final int action_add_performed=0x7f07001b;
+        public static final int action_cancel=0x7f07001a;
+        public static final int action_delete=0x7f070019;
+        public static final int app_description=0x7f070005;
+        public static final int app_name=0x7f070001;
+        public static final int button_add_new=0x7f070010;
+        public static final int button_add_new_item=0x7f07000e;
+        public static final int button_cancel_new_item=0x7f07000f;
+        public static final int button_capture=0x7f07001e;
+        public static final int button_clear=0x7f070009;
+        public static final int button_clear_alert=0x7f070014;
+        public static final int button_delete_all=0x7f070012;
+        public static final int button_delete_checked_alert=0x7f070015;
+        public static final int button_delete_checked_confirmation=0x7f070016;
+        public static final int button_delete_checked_performed=0x7f070017;
+        public static final int button_quantity=0x7f070013;
+        public static final int button_save=0x7f07000a;
+        public static final int edit_message=0x7f070004;
+        public static final int empty_string=0x7f070000;
+        public static final int exit_confirmation=0x7f070018;
+        public static final int list_header=0x7f070008;
+        public static final int menu_settings=0x7f070002;
+        public static final int search_title=0x7f07001d;
+        public static final int textbox_new_item_title=0x7f070011;
+        public static final int textbox_price=0x7f07001f;
+        public static final int title_activity_add_item=0x7f07000d;
+        public static final int title_activity_custom_row=0x7f07000c;
+        public static final int title_activity_list_selector=0x7f07000b;
+        public static final int title_activity_main=0x7f070003;
+        public static final int title_activity_simple=0x7f070007;
+        public static final int title_activity_splash_screen=0x7f070006;
     }
     public static final class style {
-        public static final int AppTheme=0x7f070000;
-        public static final int ButtonBar=0x7f070002;
-        public static final int ButtonBarButton=0x7f070005;
-        public static final int CustomButton=0x7f070006;
-        public static final int FullscreenActionBarStyle=0x7f070007;
-        public static final int FullscreenTheme=0x7f070001;
-        public static final int layout=0x7f070004;
-        public static final int text=0x7f070003;
+        public static final int AppTheme=0x7f080000;
+        public static final int ButtonBar=0x7f080002;
+        public static final int ButtonBarButton=0x7f080005;
+        public static final int CustomButton=0x7f080006;
+        public static final int FullscreenActionBarStyle=0x7f080007;
+        public static final int FullscreenTheme=0x7f080001;
+        public static final int layout=0x7f080004;
+        public static final int text=0x7f080003;
     }
     public static final class xml {
         public static final int todolist=0x7f040000;

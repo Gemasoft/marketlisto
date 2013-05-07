@@ -41,6 +41,12 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.gemasoft.marketlisto.SplashScreen" />
         </activity>
+        <activity
+            android:name="com.gemasoft.marketlisto.CaptureActivity"
+            android:label="@string/title_activity_add_item"
+            android:theme="@android:style/Theme.Dialog"
+            android:windowSoftInputMode="stateVisible|adjustResize">
+        </activity>
     </application>
 
 </manifest>
