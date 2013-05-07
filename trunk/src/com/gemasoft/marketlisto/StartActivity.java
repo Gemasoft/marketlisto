@@ -3,14 +3,18 @@ package com.gemasoft.marketlisto;
 import java.util.ArrayList;
 
 import android.R.string;
+import android.annotation.SuppressLint;
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.ListActivity;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Paint;
 import android.graphics.Typeface;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 import android.util.SparseBooleanArray;
@@ -27,6 +31,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+@SuppressLint("ShowToast")
 public class StartActivity extends Activity {
 	int selectedItemId = 0;
 	ListView mainListView = null;
@@ -41,34 +46,41 @@ public class StartActivity extends Activity {
 		super.onCreate(savedInstanceState);
 
 		setContentView(R.layout.activity_start);
-
+		
+		setupActionBar();
+		
 		this.mainListView = (ListView) findViewById(R.id.mainlistView);
 
 		mainListView.setAdapter(this.customTODOAdapter);
 		mainListView.setItemsCanFocus(false);
 
 		registerForContextMenu(mainListView);
+		
+		//Toast.makeText(this,"$" + String.valueOf(helper.getTotalPrice()), Toast.LENGTH_LONG).show();
 
 		refreshView();
 	}
 
 	//BUTTONS ACTIONS
 	public void addItem(View view){
-		// TODO ADD ITEM BUTTON CLICK
 		Intent intent = new Intent(StartActivity.this, AddItem.class);
-		StartActivity.this.startActivity(intent);
+		StartActivity.this.startActivityForResult (intent, 0);		
+	}
+	
+	@Override
+	public void onActivityResult(int requestCode, int resultCode, Intent data){
+		refreshView();
+		CheckedCounter();
 	}
 
 	public void clearMarked(View view){
-		// TODO CLEAR BUTTON CLICK
 		helper.clearSelections();
-		refreshView();
 		Toast.makeText(getApplicationContext(),	getResources().getString(R.string.button_clear_alert), Toast.LENGTH_SHORT).show();		
-		//SendNotification(getResources().getString(R.string.button_clear_alert) + " Los changos van a parangacutirimicuaro cuando estan hambrientos");	
+		refreshView();
+		CheckedCounter();
 	}
 
 	public void deleteItem(View view){
-		// TODO DELETE BUTTON CLICK
 		new AlertDialog.Builder(StartActivity.this)
 		.setMessage(
 				getResources()
@@ -77,20 +89,13 @@ public class StartActivity extends Activity {
 						.setCancelable(false)
 						.setPositiveButton("Yes",
 								new DialogInterface.OnClickListener() {
-							public void onClick(
-									DialogInterface dialog,
-									int id) {
+							public void onClick(DialogInterface dialog,	int id) {
 								helper.deleteChecked();
-								refreshView();
-								Toast.makeText(
-										getApplicationContext(),
-										getResources()
-										.getString(
-												R.string.button_delete_checked_alert),
-												Toast.LENGTH_SHORT)
-												.show();
+								Toast.makeText(getApplicationContext(),	getResources().getString(R.string.button_delete_checked_alert),	Toast.LENGTH_SHORT).show();
 							}
 						}).setNegativeButton("No", null).show();	
+		refreshView();
+		CheckedCounter();
 	}
 
 	@Override
@@ -106,30 +111,36 @@ public class StartActivity extends Activity {
 		String menuItemName = menuItems[menuItemIndex];
 		if (menuItemName == "Delete") {
 			helper.deleteItem(selectedItemId);
-			refreshView();
 			Toast.makeText(
 					getApplicationContext(),
 					getResources().getString(
 							R.string.button_delete_checked_performed),
 							Toast.LENGTH_SHORT).show();
+			refreshView();
+			CheckedCounter();
 		}
 		return true;
 	}
 
+	
 	//ON ITEM SELECTION CHANGED
 	public void changeSelection(View v) {
 		CheckBox cBox = (CheckBox) v;
-		helper.checkItem((Integer) cBox.getTag(), cBox.isChecked() ? 1 : 0);	
-		CheckedCounter();
 		if (cBox.isChecked()) {
-			cBox.setPaintFlags(Paint.STRIKE_THRU_TEXT_FLAG);
-			return;
+			cBox.setPaintFlags(Paint.STRIKE_THRU_TEXT_FLAG);	
+			Intent intent = new Intent(StartActivity.this, CaptureActivity.class);
+			intent.putExtra("_ID", (Integer)cBox.getTag());				
+			StartActivity.this.startActivityForResult(intent,0);	
 		} else {
 			cBox.setPaintFlags(Paint.LINEAR_TEXT_FLAG);
-			ThinPencilHandwriting = Typeface.createFromAsset(this.getAssets(),"fonts/ThinPencilHandwriting.ttf");
-			cBox.setTypeface(ThinPencilHandwriting, Typeface.BOLD);
-			return;
+			//ThinPencilHandwriting = Typeface.createFromAsset(this.getAssets(),"fonts/ThinPencilHandwriting.ttf");
+			cBox.setTypeface(ThinPencilHandwriting, Typeface.BOLD);	
+			helper.checkItem((Integer)cBox.getTag(), 0, "0", "0");
+			refreshView();
+			CheckedCounter();
 		}		
+	
+		return;
 	}
 
 	//REFRESHES THE LIST
@@ -210,20 +221,18 @@ public class StartActivity extends Activity {
 	}
 
 	//ITEMS COUNTER
-	private void CheckedCounter(){
+	public void CheckedCounter(){
 		int counter = 0;
 
-		this.mainListView = (ListView) findViewById(R.id.mainlistView);
+		ListView mainListView = (ListView) findViewById(R.id.mainlistView);
 
-		int total = this.mainListView.getCount();
+		int total = mainListView.getCount();
 
 		for (int i = 0; i < total; i++) 
 		{
-			if (this.mainListView.getChildAt(i)!= null){
-				ViewGroup row = (ViewGroup) this.mainListView.getChildAt(i);
-
+			if (mainListView.getChildAt(i)!= null){
+				ViewGroup row = (ViewGroup) mainListView.getChildAt(i);
 				CheckBox cbx = (CheckBox) row.findViewById(R.id.cbxChecked);
-
 				//  Get your controls from this ViewGroup and perform your task on them =)	  
 				if (cbx.isChecked()){
 					counter++;
@@ -233,9 +242,14 @@ public class StartActivity extends Activity {
 
 		MenuItem counterMenu = (MenuItem) menu.findItem(R.id.menu_counter);		
 		//counterMenu.setTitle(String.valueOf(counter) + "/" + String.valueOf(total));
-		
-		counterMenu.setTitle(String.valueOf(helper.getCheckedItems()) + "/" + String.valueOf(helper.getItemsTotal()));
+		counterMenu.setTitle(String.valueOf("Items: "  + helper.getCheckedItems()) + "/" + String.valueOf(helper.getItemsTotal()) + " - " + "Total: $" + String.valueOf(helper.getTotalPrice()));
+	}
 
+	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
+	private void setupActionBar() {
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+			getActionBar().setDisplayHomeAsUpEnabled(true);
+		}
 	}
 
 }

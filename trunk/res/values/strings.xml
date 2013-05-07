@@ -31,5 +31,7 @@
     <string name="action_add_performed">"The new item has been added!"</string>
     <string name="action_add_error">"Please type a valid value!"</string>
     <string name="search_title">Search</string>
+    <string name="button_capture">Capture</string>
+    <string name="textbox_price">Price:</string>
 
 </resources>

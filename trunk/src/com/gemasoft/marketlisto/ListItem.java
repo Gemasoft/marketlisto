@@ -4,13 +4,15 @@ public class ListItem {
 	public int _ID;
 	public boolean checked;
 	public String title;
-	public ListItem(){
+	public int quantity;
+	public float price;
+	
+	public ListItem(int _ID,boolean checked, String title, int quantity, float price){
 		super();
-	}
-	public ListItem(int _ID,boolean checked, String title){
-		super();
+		this._ID = _ID;
 		this.checked = checked;
 		this.title = title;
-		this._ID = _ID;
+		this.quantity = quantity;
+		this.price=price;
 	}
 }

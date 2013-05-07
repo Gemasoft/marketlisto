@@ -31,4 +31,6 @@
     <string name="action_add_performed">"¡Se añadio el nuevo elemento!"</string>
     <string name="action_add_error">"¡Por favor escribe un valor valido!"</string>
     <string name="search_title">Buscar</string>
+    <string name="button_capture">Capturar</string>
+    <string name="textbox_price">Precio:</string>
 </resources>
