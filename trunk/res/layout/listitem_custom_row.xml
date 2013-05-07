@@ -1,20 +1,21 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="60dp"
+    android:layout_height="wrap_content"
     android:clickable="true"
     android:longClickable="true"
-    android:orientation="horizontal"
-    android:padding="10dp" >
+    android:orientation="horizontal">
 
     <CheckBox
         android:id="@+id/cbxChecked"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_weight="0.93"
         android:button="@drawable/checkbox_selector"
         android:checked="false"
         android:clickable="true"
         android:longClickable="true"
         android:onClick="changeSelection" >
+
     </CheckBox>
 
 </LinearLayout>

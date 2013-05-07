@@ -61,14 +61,18 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/button_cancel_new_item" />
+                android:background="@drawable/custom_button"
+                android:text="@string/button_cancel_new_item"
+                  style="@style/CustomButton" />
 
             <Button
                 android:id="@+id/btnAddNewItem"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/button_add_new_item" />
+                android:text="@string/button_add_new_item" 
+                android:background="@drawable/custom_button"
+                  style="@style/CustomButton"/>
         </LinearLayout>
     </LinearLayout>
 

@@ -1,17 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+<menu android:id="@+id/main_menu"
+     xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
 
+<!-- <item android:id="@+id/menu_search" -->
+<!--           android:title="@string/search_title" -->
+<!--           android:icon="@drawable/ic_search" -->
+<!--           android:showAsAction="ifRoom" -->
+<!--           android:actionViewClass="android.widget.SearchView"/> -->
     <item
-        android:id="@+id/menu_add_item"
-        android:icon="@drawable/icon"
-        android:title="@string/button_add_new"/>
-    <item
-        android:id="@+id/menu_unmark"
-        android:icon="@drawable/icon"
-        android:title="@string/button_clear"/>
-    <item
-        android:id="@+id/menu_delete_all"
-        android:icon="@drawable/icon"
-        android:title="@string/button_delete_all"/>
+        android:id="@+id/menu_counter"
+        android:showAsAction="always"
+        android:title="0/0" 
+        tools:ignore="HardcodedText"/>
+<!--     <item -->
+<!--         android:id="@+id/menu_add_item" -->
+<!--         android:icon="@drawable/ic_menu_add" -->
+<!--         android:title="@string/button_add_new"/> -->
+<!--     <item -->
+<!--         android:id="@+id/menu_unmark" -->
+<!--         android:icon="@drawable/ic_menu_unmark" -->
+<!--         android:title="@string/button_clear"/> -->
+<!--     <item -->
+<!--         android:id="@+id/menu_delete_all" -->
+<!--         android:icon="@drawable/ic_menu_discard" -->
+<!--         android:title="@string/button_delete_all"/> -->
 
 </menu>
