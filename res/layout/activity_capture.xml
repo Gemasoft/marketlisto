@@ -1,8 +1,7 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="top" >
+    android:gravity="top" xmlns:android="http://schemas.android.com/apk/res/android">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -10,43 +9,29 @@
         android:orientation="vertical"
         tools:ignore="UselessParent" >
 
-        <TextView
-            android:id="@+id/lblQuantity"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:clickable="false"
-            android:focusable="false"
-            android:focusableInTouchMode="false"
-            android:inputType="none"
-            android:text="@string/button_quantity"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
-
-        <AutoCompleteTextView
+        <EditText
             android:id="@+id/txtQuantity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="1"
-            android:inputType="number" >
+            android:hint="@string/button_quantity"
+            android:inputType="number"
+            android:lines="1"
+            android:maxLength="8" >
+
             <requestFocus />
-        </AutoCompleteTextView>
+        </EditText>
 
-        <TextView
-            android:id="@+id/lblPrice"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:clickable="false"
-            android:focusable="false"
-            android:focusableInTouchMode="false"
-            android:inputType="none"
-            android:text="@string/textbox_price"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
-
-        <AutoCompleteTextView
+        <EditText
             android:id="@+id/txtRowDetails"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="2"
-            android:inputType="numberDecimal" />
+            android:ems="1"
+            android:hint="@string/textbox_price"
+            android:inputType="numberDecimal"
+            android:lines="1"
+            android:maxLength="8"
+            android:singleLine="true" />
 
         <LinearLayout
             android:layout_width="match_parent"

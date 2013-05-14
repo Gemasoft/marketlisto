@@ -43,7 +43,7 @@ public class StartActivity extends Activity {
 
 		setContentView(R.layout.activity_start);
 		
-		setupActionBar();
+		//setupActionBar();
 		
 		this.mainListView = (ListView) findViewById(R.id.mainlistView);
 
@@ -242,11 +242,11 @@ public class StartActivity extends Activity {
 		counterMenu.setTitle(String.valueOf("Items: "  + helper.getCheckedItems()) + "/" + String.valueOf(helper.getItemsTotal()) + " - " + "Total: $" + String.valueOf(helper.getTotalPrice()));
 	}
 
-	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
-	private void setupActionBar() {
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-			getActionBar().setDisplayHomeAsUpEnabled(true);
-		}
-	}
+//	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
+//	private void setupActionBar() {
+//		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+//			getActionBar().setDisplayHomeAsUpEnabled(true);
+//		}
+//	}
 
 }
