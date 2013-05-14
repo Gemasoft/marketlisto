@@ -10,23 +10,16 @@
         android:orientation="vertical"
         tools:ignore="UselessParent" >
 
-        <TextView
-            android:id="@+id/lblItemName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:clickable="false"
-            android:focusable="false"
-            android:focusableInTouchMode="false"
-            android:inputType="none"
-            android:text="@string/textbox_new_item_title"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
-
         <AutoCompleteTextView
             android:id="@+id/txtNewItemTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textCapCharacters" >
+            android:hint="@string/textbox_new_item_title"
+            android:inputType="textCapCharacters"
+            android:maxLength="50"
+            android:maxLines="1"
+            android:singleLine="true" >
 
             <requestFocus />
         </AutoCompleteTextView>

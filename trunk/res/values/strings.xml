@@ -18,7 +18,7 @@
     <string name="button_add_new_item">Add</string>
     <string name="button_cancel_new_item">Cancel</string>
     <string name="button_add_new">Add New</string>
-    <string name="textbox_new_item_title">Please type the item name:</string>
+    <string name="textbox_new_item_title">Item name</string>
     <string name="button_delete_all">Delete checked</string>
     <string name="button_quantity">Quantity:</string>
     <string name="button_clear_alert">The checkboxes have been cleared!</string>
@@ -33,5 +33,6 @@
     <string name="search_title">Search</string>
     <string name="button_capture">Capture</string>
     <string name="textbox_price">Price:</string>
-
+	<string name="empty_quantity_alert">Please type the quantity.</string>
+	<string name="empty_price_alert">Please type the price.</string>
 </resources>

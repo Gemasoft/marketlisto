@@ -18,7 +18,7 @@
     <string name="button_add_new_item">Agregar</string>
     <string name="button_cancel_new_item">Cancelar</string>
     <string name="button_add_new">Agregar nuevo</string>
-    <string name="textbox_new_item_title">Agrega el nombre del elemento:</string>
+    <string name="textbox_new_item_title">Nombre del elemento</string>
     <string name="button_delete_all">Borrar seleccionadas</string>
     <string name="button_quantity">Cantidad:</string>
     <string name="button_clear_alert">¡Se ha limpiado la seleccion de elementos!</string>
@@ -33,4 +33,6 @@
     <string name="search_title">Buscar</string>
     <string name="button_capture">Capturar</string>
     <string name="textbox_price">Precio:</string>
+    <string name="empty_quantity_alert">¡Por favor escribe la cantidad!</string>
+	<string name="empty_price_alert">¡Por favor escribe el precio!</string>
 </resources>

@@ -52,25 +52,22 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int tile=0x7f020010;
     }
     public static final class id {
-        public static final int btnAddNewItem=0x7f0a0003;
-        public static final int btnCancelAdd=0x7f0a0002;
-        public static final int btnCancelCapture=0x7f0a0008;
-        public static final int btnCapture=0x7f0a0009;
-        public static final int btnClear=0x7f0a000e;
-        public static final int btnDeleteChecked=0x7f0a000f;
-        public static final int btnSend=0x7f0a000d;
-        public static final int cbxChecked=0x7f0a0010;
-        public static final int fullscreen_content_controls=0x7f0a000c;
-        public static final int imgLogo=0x7f0a000a;
-        public static final int lblItemName=0x7f0a0000;
-        public static final int lblPrice=0x7f0a0006;
-        public static final int lblQuantity=0x7f0a0004;
-        public static final int main_menu=0x7f0a0011;
-        public static final int mainlistView=0x7f0a000b;
-        public static final int menu_counter=0x7f0a0012;
-        public static final int txtNewItemTitle=0x7f0a0001;
-        public static final int txtQuantity=0x7f0a0005;
-        public static final int txtRowDetails=0x7f0a0007;
+        public static final int btnAddNewItem=0x7f0a0002;
+        public static final int btnCancelAdd=0x7f0a0001;
+        public static final int btnCancelCapture=0x7f0a0005;
+        public static final int btnCapture=0x7f0a0006;
+        public static final int btnClear=0x7f0a000b;
+        public static final int btnDeleteChecked=0x7f0a000c;
+        public static final int btnSend=0x7f0a000a;
+        public static final int cbxChecked=0x7f0a000d;
+        public static final int fullscreen_content_controls=0x7f0a0009;
+        public static final int imgLogo=0x7f0a0007;
+        public static final int main_menu=0x7f0a000e;
+        public static final int mainlistView=0x7f0a0008;
+        public static final int menu_counter=0x7f0a000f;
+        public static final int txtNewItemTitle=0x7f0a0000;
+        public static final int txtQuantity=0x7f0a0003;
+        public static final int txtRowDetails=0x7f0a0004;
     }
     public static final class layout {
         public static final int activity_add_item=0x7f030000;
@@ -102,6 +99,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int button_quantity=0x7f070013;
         public static final int button_save=0x7f07000a;
         public static final int edit_message=0x7f070004;
+        public static final int empty_price_alert=0x7f070021;
+        public static final int empty_quantity_alert=0x7f070020;
         public static final int empty_string=0x7f070000;
         public static final int exit_confirmation=0x7f070018;
         public static final int list_header=0x7f070008;
