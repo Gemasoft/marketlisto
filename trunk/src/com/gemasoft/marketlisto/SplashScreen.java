@@ -26,4 +26,5 @@ public class SplashScreen extends Activity {
             }
         }, SPLASH_DISPLAY_LENGHT);
     }
+    
 }
