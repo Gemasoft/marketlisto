@@ -1,0 +1,40 @@
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lnlCustomRow"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:longClickable="true"
+    android:orientation="horizontal"
+    tools:ignore="HardcodedText" >
+
+    <CheckBox
+        android:id="@+id/cbxChecked"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.88"
+        android:button="@drawable/checkbox_selector"
+        android:checked="false"
+        android:clickable="true"
+        android:gravity="center_vertical|start|left"
+        android:longClickable="true"
+        android:onClick="changeSelection"
+        android:text="MILK"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/txtRowDetails"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:gravity="right"
+        android:longClickable="true"
+        android:text="0 * $0"
+        android:textColor="@color/alternate_one"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:typeface="sans"
+        tools:ignore="HardcodedText" />
+
+</LinearLayout>
