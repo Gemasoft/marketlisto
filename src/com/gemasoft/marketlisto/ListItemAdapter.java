@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
@@ -27,6 +28,7 @@ public class ListItemAdapter extends ArrayAdapter<ListItem> {
     Typeface  ThinPencilHandwriting;
 
 	static class ListItemHolder {
+		LinearLayout lnlCustomRow;
 		CheckBox cbxChecked;
 		TextView txtRowDetails;
 	}
@@ -56,6 +58,10 @@ public class ListItemAdapter extends ArrayAdapter<ListItem> {
 		} else {
 			holder = (ListItemHolder) row.getTag();
 		}
+		
+		ThinPencilHandwriting = Typeface.createFromAsset(context.getAssets(), "fonts/Roboto-Thin.ttf");
+		holder.cbxChecked.setTypeface(ThinPencilHandwriting, Typeface.BOLD);
+		holder.txtRowDetails.setTypeface(ThinPencilHandwriting, Typeface.BOLD);
 
 		ListItem listItem = dataItems.get(pos);
 		
@@ -63,14 +69,15 @@ public class ListItemAdapter extends ArrayAdapter<ListItem> {
 		holder.cbxChecked.setText(listItem.title);
 		holder.cbxChecked.setChecked(listItem.checked);
 		
-		holder.txtRowDetails.setText(listItem.quantity + " * $" + listItem.price + "  ");
+		holder.txtRowDetails.setText(listItem.quantity + " x $" + listItem.price + "  ");
 		
 		if (listItem.checked) {
-			holder.cbxChecked.setPaintFlags(Paint.STRIKE_THRU_TEXT_FLAG);
+			holder.cbxChecked.setPaintFlags(holder.cbxChecked.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG );
+		}else{
+			holder.cbxChecked.setPaintFlags(holder.cbxChecked.getPaintFlags() & ~(Paint.STRIKE_THRU_TEXT_FLAG));
 		}
-		
-		//ThinPencilHandwriting = Typeface.createFromAsset(context.getAssets(), "fonts/ThinPencilHandwriting.ttf");
-		holder.cbxChecked.setTypeface(ThinPencilHandwriting, Typeface.BOLD);
+	
+		//holder.cbxChecked.setBackgroundColor(android.graphics.Color.RED);
 		
 		
 		return row;

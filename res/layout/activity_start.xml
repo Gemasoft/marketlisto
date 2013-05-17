@@ -2,8 +2,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
-    tools:context=".StartActivity" >
+    tools:context=".StartActivity" 
+          android:background="@drawable/custom_button">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,11 +13,9 @@
 
         <ListView
             android:id="@+id/mainlistView"
-            style="android:listViewStyle"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:choiceMode="singleChoice"
             android:scrollingCache="true" >
 
         </ListView>
@@ -37,31 +35,47 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@drawable/custom_button"                
+                android:background="@drawable/custom_button"
                 android:contentDescription="@string/button_add_new"
                 android:onClick="addItem"
-                android:src="@drawable/ic_menu_add" />
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_new_add" />
 
             <ImageButton
                 android:id="@+id/btnClear"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                 android:background="@drawable/custom_button"                
+                android:background="@drawable/custom_button"
                 android:contentDescription="@string/button_clear"
                 android:onClick="clearMarked"
-                android:src="@drawable/ic_menu_unmark" />
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_new_refresh" />
+            
+              <ImageButton
+                  android:id="@+id/btnDeleteChecked"
+                  android:layout_width="0dp"
+                  android:layout_height="match_parent"
+                  android:layout_weight="1"
+                  android:background="@drawable/custom_button"
+                  android:contentDescription="@string/button_delete_all"
+                  android:onClick="deleteItem"
+                  android:scaleType="fitCenter"
+                  android:src="@drawable/ic_new_delete"
+                  android:text="@string/button_delete_all" />
 
             <ImageButton
-                android:id="@+id/btnDeleteChecked"
+                android:id="@+id/btnDeleteAll"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                 android:background="@drawable/custom_button"                 
+                android:background="@drawable/custom_button"
                 android:contentDescription="@string/button_delete_all"
-                android:onClick="deleteItem"
-                android:src="@drawable/ic_menu_discard"
+                android:onClick="deleteAll"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_new_trash"
                 android:text="@string/button_delete_all" />
+
         </LinearLayout>
 
     </LinearLayout>
