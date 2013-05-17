@@ -1,0 +1,63 @@
+<RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="top" xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:ignore="UselessParent" >
+
+        <EditText
+            android:id="@+id/txtQuantity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="1"
+            android:hint="@string/button_quantity"
+            android:inputType="number"
+            android:lines="1"
+            android:maxLength="8" >
+
+            <requestFocus />
+        </EditText>
+
+        <EditText
+            android:id="@+id/txtRowDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="1"
+            android:hint="@string/textbox_price"
+            android:inputType="numberDecimal"
+            android:lines="1"
+            android:maxLength="8"
+            android:singleLine="true" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/btnCancelCapture"
+                style="@style/CustomButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/custom_button"
+                android:text="@string/action_cancel" 
+                android:onClick="cancelCapture"/>
+
+            <Button
+                android:id="@+id/btnCapture"
+                style="@style/CustomButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/custom_button"
+                android:text="@string/button_capture" 
+                android:onClick="performCapture"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="empty_string"></string>
+    <string name="app_name">MarketListo</string>
+    <string name="menu_settings">Opciones</string>
+    <string name="title_activity_main">MarketListo - Elementos</string>
+    <string name="edit_message">Agrega el nombre del elemento</string>
+    <string name="app_description">La aplicación mas simple para hacer las compras</string>
+    <string name="title_activity_splash_screen">Splash Screen</string>
+    <string name="title_activity_simple">Simple</string>
+    <string name="list_header">Elementos</string>
+    <string name="button_clear">Desmarcar todo</string>
+    <string name="button_save">Guardar</string>
+    <string name="title_activity_list_selector">Selector de lista</string>
+    <string name="title_activity_custom_row">Custom Row</string>
+    <string name="title_activity_add_item">Agregar nuevo elemento</string>
+    <string name="button_add_new_item">Agregar</string>
+    <string name="button_cancel_new_item">Cancelar</string>
+    <string name="button_add_new">Agregar nuevo</string>
+    <string name="textbox_new_item_title">Nombre del elemento</string>
+    <string name="button_delete_all">Borrar seleccionadas</string>
+    <string name="button_quantity">Cantidad:</string>
+    <string name="button_clear_alert">¡Se ha limpiado la seleccion de elementos!</string>
+    <string name="button_delete_checked_alert">¡Se han borrado los elementos seleccionados!</string>
+    <string name="button_delete_checked_confirmation">"¿Estas seguro que quieres borrar los elementos seleccionados?"</string>
+    <string name="button_delete_checked_performed">"¡El elemento ha sido borrado!"</string>
+    <string name="exit_confirmation"> "¿Estas seguro que quieres salir?"</string>
+    <string name="action_delete">Eliminar</string>
+    <string name="action_cancel">Cancelar</string>
+    <string name="action_add_performed">"¡Se añadio el nuevo elemento!"</string>
+    <string name="action_add_error">"¡Por favor escribe un valor valido!"</string>
+    <string name="search_title">Buscar</string>
+    <string name="button_capture">Capturar</string>
+    <string name="textbox_price">Precio:</string>
+    <string name="empty_quantity_alert">¡Por favor escribe la cantidad!</string>
+	<string name="empty_price_alert">¡Por favor escribe el precio!</string>
+</resources>
