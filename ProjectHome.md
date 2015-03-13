@@ -1,0 +1,1 @@
+This is an android app created to manage basic lists.
